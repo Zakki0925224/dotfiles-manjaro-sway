@@ -121,7 +121,12 @@ window#waybar {
 }
 
 #clock {
+    background-color: #ce93d8;
     font-weight: bold;
+}
+
+#cpu {
+    background-color: #64b5f6;
 }
 
 #cpu.warning {
@@ -141,6 +146,7 @@ window#waybar {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    background-color: #aed581;
 }
 
 #memory.warning {
@@ -157,12 +163,24 @@ window#waybar {
     background: @background_color;
 }
 
+#network {
+    background-color: #f48fb1;
+}
+
 #network.disconnected {
     color: @warning_color;
 }
 
+#pulseaudio {
+    background-color: #fff176;
+}
+
 #pulseaudio.muted {
     color: @warning_color;
+}
+
+#temperature {
+    background-color: #e57373;
 }
 
 #temperature.critical {
@@ -195,6 +213,10 @@ window#waybar {
     color: @warning_color;
 }
 
+#bluetooth {
+    background-color: #9fa8da;
+}
+
 #bluetooth.disabled {
     color: @warning_color;
 }
@@ -206,4 +228,20 @@ window#waybar {
 
 #custom-valent.dangerously-empty {
     color: @warning_color;
+}
+
+#custom-sunset {
+    background-color: #ff8a65;
+}
+
+#tray {
+    background-color: #bcaaa4;
+}
+
+#language {
+    background-color: #e0e0e0;
+}
+
+#custom-playerctl {
+    background-color: #81c784;
 }
