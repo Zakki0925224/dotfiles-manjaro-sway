@@ -18,7 +18,7 @@
     "position": "top",
 
     "modules-left": ["custom/menu", "custom/scratchpad", "battery", "temperature", "cpu", "memory"],
-    "modules-center": ["custom/wf-recorder", "sway/mode", "custom/weather", "sway/workspaces"],
+    "modules-center": ["custom/wf-recorder", "sway/mode", "custom/weather", "sway/workspaces", "sway/window"],
     "modules-right": [
         // informational
         "sway/language",
@@ -355,5 +355,10 @@
         "on-click": "inhibit-idle off; inhibit-idle interactive",
         "on-click-middle": "inhibit-idle off",
         "signal": 15
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50
     }
 }
