@@ -17,18 +17,14 @@
     "height": 30,
     "position": "top",
 
-    "modules-left": ["custom/menu", "sway/workspaces", "custom/scratchpad"],
-    "modules-center": ["custom/wf-recorder", "sway/mode", "custom/weather"],
+    "modules-left": ["custom/menu", "custom/scratchpad", "battery", "temperature", "cpu", "memory"],
+    "modules-center": ["custom/wf-recorder", "sway/mode", "custom/weather", "sway/workspaces"],
     "modules-right": [
         // informational
         "sway/language",
         "custom/github",
         "custom/clipboard",
         "custom/zeit",
-        "cpu",
-        // "temperature",
-        // "memory",
-        "battery",
 
         // connecting
         "network",
@@ -69,15 +65,15 @@
 
     "clock": {
         "interval": 60,
-        "format": "{:%e %b %Y %H:%M}",
+        "format": "󱑓  {:%H:%M}",
         "tooltip": true,
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
         "on-click": "swaymsg exec \\$calendar"
     },
 
     "cpu": {
-        "interval": 10,
-        "format": "󰘚",
+        "interval": 1,
+        "format": "  {usage:2}%",
         "states": {
             "warning": 70,
             "critical": 90
@@ -87,8 +83,8 @@
     },
 
     "memory": {
-        "interval": 10,
-        "format": "󰍛",
+        "interval": 1,
+        "format": "  {}%",
         "states": {
             "warning": 70,
             "critical": 90
@@ -99,8 +95,8 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "{icon}",
-        "format-ethernet": "󰈀",
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "󰈀  Wired",
         "format-disconnected": "󰖪",
         "format-disabled": "󰀝",
         "format-icons": [
@@ -150,8 +146,8 @@
 
     "temperature": {
         "critical-threshold": 90,
-        "interval": 5,
-        "format": "{icon}",
+        "interval": 1,
+        "format": "{icon} {temperatureC}°C",
         "tooltip-format": "{temperatureC}°C",
         "format-icons": ["", "", ""],
         "tooltip": true,
@@ -189,7 +185,7 @@
     },
 
     "sway/language": {
-        "format": " {}",
+        "format": "  {}",
         "min-length": 5,
         "tooltip": false,
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
@@ -214,7 +210,7 @@
         "return-type": "json",
         "format": "{icon}",
         "format-icons": {
-            "on": "󰌵",
+            "on": "󰛨",
             "off": "󰌶"
         },
         "exec": "fallback_latitude=50.1 fallback_longitude=8.7 latitude= longitude= /usr/share/sway/scripts/sunset.sh",
